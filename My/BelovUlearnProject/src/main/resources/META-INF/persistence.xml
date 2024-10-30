@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+             https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="SchoolUnit">
+        <class>com.example.Entity.DistrictData</class>
+        <class>com.example.Entity.SchoolData</class>
+        <class>com.example.Entity.StatisticsData</class>
+
+        <properties>
+            <!-- SQLite connection URL -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:schools.db"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+
+            <!-- Hibernate dialect for SQLite -->
+            <property name="hibernate.dialect" value="org.hibernate.community.dialect.SQLiteDialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
